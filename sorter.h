@@ -22,7 +22,7 @@
 using namespace std;
 
 template <class T>
-void sorter(vector<T> &vec, int k) {  
+void sorter(vector<T> &items, size_t k) {  
 	// write your solution for k-way merge sort below	
 
 }
