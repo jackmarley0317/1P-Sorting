@@ -19,11 +19,19 @@
 #include <cstddef>
 #include <vector>
 
-using namespace std;
+/***
+ * DO NOT put unscoped 'using namespace std;' in header files!
+ * Instead put them at the beginning of class or function definitions
+ * (as demonstrated below).
+ *
+ * For more details, see the commentary at the top of
+ *   tests/header-sans-using-namespace.h
+ * in this project repo.
+ */
 
 template <class T>
 void sorter(vector<T> &items, size_t k) {  
+	using namespace std;
 	// write your solution for k-way merge sort below	
-
 }
 #endif

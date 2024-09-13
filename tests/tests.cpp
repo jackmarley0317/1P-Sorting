@@ -10,11 +10,16 @@
 #include <iostream>  // for operator<< 
 
 #include "gtest/gtest.h"
-#include "sorter.h"
-
 #define LARGE_SET_SIZE  100000
 #define VERY_LARGE_SET_SIZE  1000000
 
+#include "sorter.h"
+
+#include "header-sans-using-namespace.h"
+#include "sneaky-student-sort.h"             // SneakyStudentSort test
+#include "sneaky-prevent-std-containers.h"   // prevent std containers as backing stores for priority queues and heaps
+#include "sneaky-project-requirements.h"     // look for project-requirement circumvention
+											 
 using namespace std;
 
 // Template tests
@@ -233,9 +238,4 @@ TEST(SorterTest, VeryLarge) {
     ASSERT_TRUE(is_sorted(a.begin(),a.end()));
 }
 
-#include "sneaky-student-sort.h"   // SneakyStudentSort test
-
-#include "sneaky-prevent-std-containers.h"   // prevent std containers as backing stores for priority queues and heaps
-
-#include "sneaky-prevent-vector-heap.h"      // prevent heaps backed by vectors
 

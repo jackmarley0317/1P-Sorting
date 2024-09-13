@@ -26,4 +26,8 @@ add_compile_options(-pedantic -Wall -Wextra -Werror=vla)
 add_executable(run-main sorter.h main.cpp)
 add_executable(run-tests sorter.h tests/sneaky-student-sort.h tests/tests.cpp)
 
+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+target_link_libraries(run-tests GTest::gtest_main kvm procstat )
+else()
 target_link_libraries(run-tests GTest::gtest_main)
+endif()
